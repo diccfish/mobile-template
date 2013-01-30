@@ -1,0 +1,689 @@
+* { margin: 0; padding: 0; font-family: Arial,Helvetica,sans-serif; }
+
+body { background: #333; font-size: 13px; max-width: 685px; }
+
+h1 { color: #fff; font-size: 24px; font-weight: bold; text-align: center; text-shadow: 0 1px 2px #000; }
+h2 { font-size: 18px; line-height: 24px; font-weight: bold; }
+h3 { color: #fff; font-size: 12px; font-weight: bold; text-align: center; text-shadow: 0 1px 2px #000; }
+
+
+/*_________________  Navigation
+________________________________________*/
+
+#nav {
+  /* Collapsed */
+  background: url(images/dark_matter.png) repeat;
+  height: 100%;
+  left: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  width: 0;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+}
+#nav a {
+	border-bottom: solid 1px #ccc;
+  	color: #fff;
+	display: block;
+	float: left;
+	font-size: 1.375em;
+	padding: 20px 0;
+	text-decoration: none;
+	text-indent: 20px;
+	width: 100%;
+	-webkit-transition:all 2s ease-in-out;
+	-moz-transition:all 2s ease-in-out;
+	-o-transition:all 2s ease-in-out;
+	transition:all 2s ease-in-out;
+}
+#nav a:nth-child(2n) {
+	background: rgba(0,0,0,0.25);
+}
+#nav a:last-child {
+	padding-bottom: 100px;
+}
+
+#nav:target {
+	box-shadow: 2px 0 5px #000;
+  	width: 60%;
+  	z-index: 999;
+}
+
+#nav:target + .wrap {
+	right: -60%;
+	position: fixed;
+	overflow: hidden;
+}
+#nav:target + .wrap #nav-open {
+	display: none;
+}
+#nav:target + .wrap #nav-close {
+	display: block;
+}
+
+
+/*_________________  Header
+________________________________________*/
+
+header {
+  	background: #001D5F;
+  	height: 50px;
+	overflow: hidden;
+  	transition: all 0.3s ease;
+  	-webkit-transition: all 0.3s ease;
+  	-moz-transition: all 0.3s ease;
+}
+header h1 {
+	background: url(http://dummyimage.com/105x21/fff/0011ff.png&text=not-retina.png) no-repeat;
+	height: 21px;
+	margin: 15px auto;
+	text-indent: -99999px;
+	width: 105px;
+}
+
+
+/*_________________  Header Buttons
+________________________________________*/
+
+.wrap #phone-call {
+	background: #72ab13;
+	background-image: -moz-linear-gradient( 90deg , rgba(114, 171, 19, 1) 0%, rgba(114, 171, 19, 0.6) 100%, rgba(255, 255, 255, 0.5) 100%);
+	background-image: -webkit-linear-gradient( 90deg , rgba(114, 171, 19, 1) 0%, rgba(114, 171, 19, 0.6) 100%, rgba(255, 255, 255, 0.5) 100%);
+	background-image: -o-linear-gradient( 90deg , rgba(114, 171, 19, 1) 0%, rgba(114, 171, 19, 0.6) 100%, rgba(255, 255, 255, 0.5) 100%);
+	background-image: -ms-linear-gradient( 90deg , rgba(114, 171, 19, 1) 0%, rgba(114, 171, 19, 0.6) 100%, rgba(255, 255, 255, 0.5) 100%); 
+	border-radius: 3px;
+	box-shadow: inset 0 0 2px (255,255,255,1), 0 0 2px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 0 2px (255,255,255,0.2), 0 0 2px rgba(0,0,0,0.5);
+	float: right;
+	padding: 4px 15px 2px 15px;
+	margin: 10px 15px;
+}
+
+.wrap #nav-open {
+	background: #001D5F;
+	color: #fff;
+	float: left;
+	font-size: 2.25em;
+	font-weight: bold;
+	margin: 1px 0 -1px 5px;
+	padding: 4px 6px 6px;
+	position: fixed;
+	text-decoration: none;
+	z-index: 99999;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+.wrap #nav-close  {
+	background: #001D5F;
+	color: #fff;
+	display: none;
+	float: left;
+	font-size: 2.25em;
+	font-weight: bold;
+	margin: 1px 0 -1px 5px;
+	padding: 4px 6px 6px;
+	position: fixed;
+	text-decoration: none;
+	z-index: 99999;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+
+
+/*_________________  Wrappers
+________________________________________*/
+
+.wrap {
+	background-image: -moz-linear-gradient( 90deg , rgba(44, 50, 65, 1) 0%, rgba(44, 50, 65, 0.9) 100%);
+	background-image: -webkit-linear-gradient( 90deg , rgba(44, 50, 65, 1) 0%, rgba(44, 50, 65, 0.9) 100%);
+	background-image: -ms-linear-gradient( 90deg , rgba(44, 50, 65, 1) 0%, rgba(44, 50, 65, 0.9) 100%);
+	float: right;
+	height: 100%;
+	min-height: auto;
+	min-height: 1320px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+  	width: 100%;
+  	transition: all 0.3s ease;
+  	-webkit-transition: all 0.3s ease;
+  	-moz-transition: all 0.3s ease;
+}
+
+.top {
+	background: url(images/bg.png) repeat;
+	height: 140px;
+	position: relative;
+}
+
+.top h1 {
+	padding-top: 40px;
+}
+
+.main {
+	background: #fff;
+	box-shadow: 0 0 10px #000;
+	color: #333333;
+	margin: -40px auto 20px auto;
+	padding: 20px 2.5%;
+	position: relative;
+	width: 90%;
+}
+.main p {
+	line-height: 20px;
+	width: 100%;
+}
+.main a {
+	text-decoration: none;
+}
+.main hr {
+	width: 100%;
+}
+
+
+/*_________________  Form
+________________________________________*/
+
+.form {
+	background: #0089c4;
+	color: #fff;
+	height: auto;
+	overflow: auto;
+	margin-top: 20px;
+	margin-left: -2.5%;
+	margin-bottom: 30px;
+	padding: 0 2.5%;
+	position: relative;
+	width: 100%;
+}
+
+.form h2 {
+	color: #ead020;
+	font-weight: normal;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.form p {
+	line-height: 20px;
+	padding: 10px 0;
+}
+
+.form form div {
+	float: left;
+	margin-bottom: 10px;
+}
+
+.form form .selectfield {
+	width: 100%;
+}
+
+.form form .textfield {
+	width: 49%;
+}
+
+.form form .firstname, .form form .phone {
+	margin-right: 2%;
+}
+
+.form form select {
+	font-size: 1em;
+	margin: 2px auto;
+	padding: 0.75%;
+	width: 100%;
+}
+
+.form form input {
+	font-size: 1em;
+	margin: 2px auto;
+	padding: 1.5% 1%;
+	width: 96%;
+}
+
+.form form label {
+	font-size: 1em;
+}
+
+.form form button, .form form input[type=button] {
+	background: #ead020;
+	background-image: -moz-linear-gradient( 90deg , rgba(234, 208, 32, 1) 50%, rgba(255, 241, 131, 1) 100%);
+	background-image: -webkit-linear-gradient( 90deg , rgba(234, 208, 32, 1) 50%, rgba(255, 241, 131, 1) 100%);
+	background-image: -o-linear-gradient( 90deg , rgba(234, 208, 32, 1) 50%, rgba(255, 241, 131, 1) 100%);
+	background-image: -ms-linear-gradient( 90deg , rgba(234, 208, 32, 1) 50%, rgba(255, 241, 131, 1) 100%);
+	border: none;
+	border-radius: 5px;
+	float: right;
+	font-weight: bold;
+	margin: 5px 5px 10px 0;
+	padding: 10px 20px;
+	width: auto;
+}
+.form form button:hover, .form form input[type=button]:hover {
+	cursor: pointer;
+}
+.form form button:active, .form form input[type=button]:active {
+	background: #666;
+	background-image: -moz-linear-gradient( 90deg , rgba(122, 114, 50, 1) 50%, rgba(148, 134, 29, 1) 100%);
+	background-image: -webkit-linear-gradient( 90deg , rgba(122, 114, 50, 1) 50%, rgba(148, 134, 29, 1) 100%);
+	background-image: -o-linear-gradient( 90deg , rgba(122, 114, 50, 1) 50%, rgba(148, 134, 29, 1) 100%);
+	background-image: -ms-linear-gradient( 90deg , rgba(122, 114, 50, 1) 50%, rgba(148, 134, 29, 1) 100%);
+	box-shadow: inset 0 0 10px #000;
+}
+
+#form-jump {
+	-webkit-transition:all 2s ease-in-out;
+	-moz-transition:all 2s ease-in-out;
+	-o-transition:all 2s ease-in-out;
+	transition:all 2s ease-in-out;
+}
+
+
+/*_________________  Video
+________________________________________*/
+
+.video {
+	background: #f2f2f2;
+	border: solid 1px #333;
+	height: 150px;
+	margin: 20px auto;
+	overflow: hidden;
+	position: relative;
+	width: 300px;
+}
+
+
+/*_________________  Quotes
+________________________________________*/
+
+.quote {
+	margin: 20px 0 20px 40px;
+	position: relative;
+}
+.quote:before {
+	color: #ccc;
+	content: "\201C";
+	left: -40px;
+	line-height: 20px;
+	font-size: 95px;
+	position: absolute;
+	top: 30px;
+}
+
+
+/*_________________  Accordion
+________________________________________*/
+
+.accordion {
+	position: relative;
+    margin: 40px auto;
+    width: 90%;
+}
+ 
+.accordion a {
+	background-image: -moz-linear-gradient( 90deg , rgba(240, 240, 240, 1) 0%, rgba(240, 240, 240, 1) 50%, #fff 75%);
+	background-image: -webkit-linear-gradient( 90deg , rgba(240, 240, 240, 1) 0%, rgba(240, 240, 240, 1) 50%, #fff 75%);
+	background-image: -o-linear-gradient( 90deg , rgba(240, 240, 240, 1) 0%, rgba(240, 240, 240, 1) 50%, #fff 75%);
+	background-image: -ms-linear-gradient( 90deg , rgba(240, 240, 240, 1) 0%, rgba(240, 240, 240, 1) 50%, #fff 75%);	border: 1px solid #ccc;
+    box-shadow: 0 1px 2px #333;
+    line-height: 30px;
+    height: 30px;
+    float: left;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.accordion a h1 {
+	color: #000;
+	float: left;
+	font-size: 1.25em;
+	font-weight: normal;
+	margin-left: 10px;
+	text-shadow: none;
+}
+ 
+.accordion a:hover { cursor: pointer; }
+
+.target-fix {
+	display: block;
+	top: 0;
+	left: 0;
+	position: fixed;
+}
+
+.accordion span:nth-of-type(2):target ~ .accordion-content:nth-of-type(1) { display: block; height: auto; padding-bottom: 25px; padding-top: 10px; }
+.accordion span:nth-of-type(3):target ~ .accordion-content:nth-of-type(2) { display: block; height: auto; padding-bottom: 25px; padding-top: 10px; }
+.accordion span:nth-of-type(4):target ~ .accordion-content:nth-of-type(3) { display: block; height: auto; padding-bottom: 25px; padding-top: 10px; }
+
+.accordion-content {
+	border: 1px solid #ccc;
+    height: 0;
+    margin: 0 auto;
+    padding: 0 1%;
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    transition: all 0.1s ease;
+  	-webkit-transition: all 0.1s ease;
+  	-moz-transition: all 0.1s ease;
+}
+
+#close-accordian1, #close-accordian2, #close-accordian3 {
+	background-image: none;
+	border-bottom: 15px solid #001D5F;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: none;
+    box-shadow: none;
+    line-height: 0;
+    height: 0;
+    float: right;
+    margin: 0 auto;
+    position: absolute;
+    text-decoration: none;
+    left: 5px;
+    bottom: 5px;
+    width: 0;
+    z-index: 99999;
+}
+
+/*_________________  Tabs
+________________________________________*/
+
+.tabs {
+	position: relative;
+    margin: 20px auto;
+    width: 100%;
+}
+ 
+.tabs input {
+	cursor: pointer;
+    position: absolute;
+    z-index: 1000;
+    width: 25%;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+}
+.tabs input#tab-2{ left: 25%; }
+.tabs input#tab-3{ left: 50%; }
+.tabs input#tab-4{ left: 75%; }
+
+.tabs label {
+	background: #F8F8F8;
+    font-size: 1em;
+    line-height: 40px;
+    height: 40px;
+    position: relative;
+    padding: 0 5%;
+    float: left;
+    display: block;
+    width: 15%;
+    color: #001D5F;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+    box-shadow: 1px 0 0 rgba(255,255,255,1), 2px 0 0 rgba(0,0,0,0.1), -2px 0 0 rgba(0,0,0,0.1);
+}
+ 
+.tabs input:hover + label { background: #001D5F; color: #fff; cursor: pointer; }
+ 
+.tabs label:first-of-type { z-index: 4; box-shadow: 1px 0 0 rgba(255,255,255,1), 2px 0 0 rgba(0,0,0,0.1); }
+.tab-label-2 { z-index: 3; }
+.tab-label-3 { z-index: 2; } 
+.tab-label-4 { z-index: 1; }
+
+.tabs input:checked + label { color: #fff; background: #001D5F; z-index: 6; }
+
+.tabs .content {
+    position: relative;
+    height: 250px;
+    z-index: 5;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+ 
+.tabs .content div {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    margin: 15px 20px;
+    z-index: 1;
+    opacity: 0;
+    transition: all linear 0.1s;
+}
+
+.tabs input.tab-selector-1:checked ~ .content .content-1,
+.tabs input.tab-selector-2:checked ~ .content .content-2,
+.tabs input.tab-selector-3:checked ~ .content .content-3,
+.tabs input.tab-selector-4:checked ~ .content .content-4 {
+	background: transparent;
+    z-index: 100;
+    opacity: 1;
+    transition: all ease-out 0.2s 0.1s;
+}
+
+
+/*_________________  Text Area
+________________________________________*/
+
+.text {
+	margin: 20px 0;
+}
+
+.text p {
+	line-height: 24px;
+}
+.text ul {
+	padding-left: 20px;
+}
+.text li {
+	line-height: 24px;
+	list-style-image: url(images/check.png);
+	padding-left: 5px;
+}
+
+
+/*_________________  Call Now Button
+________________________________________*/
+
+#call-now {
+	background: #ead020;
+	background-image: -moz-linear-gradient( 90deg , rgba(234, 208, 32, 1) 50%, rgba(255, 241, 131, 1) 100%);
+	background-image: -webkit-linear-gradient( 90deg , rgba(234, 208, 32, 1) 50%, rgba(255, 241, 131, 1) 100%);
+	background-image: -o-linear-gradient( 90deg , rgba(234, 208, 32, 1) 50%, rgba(255, 241, 131, 1) 100%);
+	background-image: -ms-linear-gradient( 90deg , rgba(234, 208, 32, 1) 50%, rgba(255, 241, 131, 1) 100%);
+	border: none;
+	border-radius: 5px;
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 10px auto;
+	padding: 10px 20px;
+	text-align: center;
+	width: 150px;
+	-webkit-transition:all 2s ease-in-out;
+	-moz-transition:all 2s ease-in-out;
+	-o-transition:all 2s ease-in-out;
+	transition:all 2s ease-in-out;
+}
+#call-now:hover {
+	cursor: pointer;
+}
+#call-now:active {
+	background: #666;
+	background-image: -moz-linear-gradient( 90deg , rgba(122, 114, 50, 1) 50%, rgba(148, 134, 29, 1) 100%);
+	background-image: -webkit-linear-gradient( 90deg , rgba(122, 114, 50, 1) 50%, rgba(148, 134, 29, 1) 100%);
+	background-image: -o-linear-gradient( 90deg , rgba(122, 114, 50, 1) 50%, rgba(148, 134, 29, 1) 100%);
+	background-image: -ms-linear-gradient( 90deg , rgba(122, 114, 50, 1) 50%, rgba(148, 134, 29, 1) 100%);
+	box-shadow: inset 0 0 10px #000;
+}
+
+
+/*_________________  Footer
+________________________________________*/
+
+footer {
+	color: #fff;
+	margin: 0 auto;
+	position: relative;
+	width: 95%;
+}
+
+footer li {
+	float: left;
+	font-weight: bold;
+	list-style: none;
+	padding-right: 0.3em;
+}
+footer li:after {
+	content: " | ";
+	padding: 0 0.3em;
+}
+footer li:last-child::after {
+	content: " ";
+}
+
+footer img {
+	display: block;
+	float: right;
+	margin: 10px;
+}
+
+footer p {
+	font-size: .875em;
+	line-height: 1.5em;
+}
+
+
+/*_________________  Media Queries
+________________________________________*/
+
+/* Small screen, non-retina */
+	@media only screen and (max-width: 320px) {}
+/* Small screen, retina */
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2)      and (max-width: 320px),
+	only screen and (   min--moz-device-pixel-ratio: 2)      and (max-width: 320px),
+	only screen and (     -o-min-device-pixel-ratio: 2/1)    and (max-width: 320px),
+	only screen and (        min-device-pixel-ratio: 2)      and (max-width: 320px),
+	only screen and (                min-resolution: 192dpi) and (max-width: 320px),
+	only screen and (                min-resolution: 2dppx)  and (max-width: 320px) { 
+
+		header h1 {
+			background: url(http://dummyimage.com/210x42/fff/0011ff.png&text=retina.png) no-repeat;
+		}
+		.wrap section.top {
+			background: url(images/bg@2x.png) repeat;
+			height: 140px;
+			position: relative;
+		}
+
+		.form input {
+			border-radius: 0;
+			padding: 2% 1%;
+		}
+	}
+
+/* medium screen, non-retina */
+	@media only screen and (min-width: 422px) {
+
+		.wrap section.top {
+			background: url(images/bg.png) repeat;
+			height: 140px;
+			position: relative;
+		}
+
+		.video {
+			height: 175px;
+			width: 402px;
+		}
+
+		.form button {
+			margin: 10px 2%;
+		}
+	}
+/* Medium screen, retina */
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 422px),
+	only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 422px),
+	only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 422px),
+	only screen and (        min-device-pixel-ratio: 2)      and (min-width: 422px),
+	only screen and (                min-resolution: 192dpi) and (min-width: 422px),
+	only screen and (                min-resolution: 2dppx)  and (min-width: 422px) { 
+
+		header h1 {
+			background: url(http://dummyimage.com/210x42/fff/0011ff.png&text=retina.png) no-repeat;
+		}
+
+		.wrap section.top {
+			background: url(images/bg@2x.png) repeat;
+			height: 140px;
+			position: relative;
+		}
+
+		.video {
+			height: 175px;
+			width: 402px;
+		}
+
+		.form button {
+			margin: 10px 2%;
+		}
+	}
+
+/* Large screen, non-retina */
+	@media only screen and (min-width: 685px) {
+		
+		html { background: url(images/dark_matter.png) repeat; }
+		body { max-width: 685px; margin: 0 auto; }
+		
+		#nav:target {
+	  		width: 60%;
+	  		z-index: 999;
+		}
+	  
+		.wrap section.top {
+			background: url(images/bg.png) repeat;
+			height: 140px;
+			position: relative;
+		}
+
+		.video {
+			height: 175px;
+			width: 645px;
+		}
+	}
+/* Large screen, retina */
+	@media
+	only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 685px),
+	only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 685px),
+	only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 685px),
+	only screen and (        min-device-pixel-ratio: 2)      and (min-width: 685px),
+	only screen and (                min-resolution: 192dpi) and (min-width: 685px),
+	only screen and (                min-resolution: 2dppx)  and (min-width: 685px) { 
+
+		html { background: url(images/dark_matter_@2x.png) repeat; }
+		body { max-width: 685px; margin: 0 auto; }
+		
+		header h1 {
+			background: url(http://dummyimage.com/210x42/fff/0011ff.png&text=retina.png) no-repeat;
+		}
+
+		.wrap section.top {
+			background: url(images/bg@2x.png) repeat;
+			height: 140px;
+			position: relative;
+		}
+
+		.video {
+			height: 175px;
+			width: 605px;
+		}
+	}
