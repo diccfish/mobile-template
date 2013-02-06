@@ -6,16 +6,21 @@ h1 { color: #fff; font-size: 24px; font-weight: bold; text-align: center; text-s
 h2 { font-size: 18px; line-height: 24px; font-weight: bold; }
 h3 { color: #fff; font-size: 12px; font-weight: bold; text-align: center; text-shadow: 0 1px 2px #000; }
 
+p { line-height: 20px; }
+
+a { text-decoration: none; }
+a:hover { cursor: pointer; }
+
 
 /*_________________  Navigation
 ________________________________________*/
 
-#nav {
+#menu {
   /* Collapsed */
   background: url(images/dark_matter.png) repeat;
   height: 100%;
   left: 0;
-  overflow: scroll;
+  overflow: auto; 
   position: fixed;
   top: 0;
   width: 0;
@@ -23,14 +28,19 @@ ________________________________________*/
   -webkit-transition: width 0.3s ease;
   -moz-transition: width 0.3s ease;
 }
-#nav a {
-	border-bottom: solid 1px #ccc;
-  	color: #fff;
+#menu ul {
+	list-style: none;
+}
+#menu ul li {
 	display: block;
+	float: left;
+	width: 100%;
+}
+#menu ul li a {
+  	color: #fff;
 	float: left;
 	font-size: 1.375em;
 	padding: 20px 0;
-	text-decoration: none;
 	text-indent: 20px;
 	width: 100%;
 	-webkit-transition:all 2s ease-in-out;
@@ -38,31 +48,35 @@ ________________________________________*/
 	-o-transition:all 2s ease-in-out;
 	transition:all 2s ease-in-out;
 }
-#nav a:nth-child(2n) {
-	background: rgba(0,0,0,0.25);
+#menu li:nth-child(2n) {
+	background: rgba(255,255,255,0.1);
 }
-#nav a:last-child {
+#menu li:last-child {
 	padding-bottom: 100px;
 }
 
-#nav:target {
-	box-shadow: 2px 0 5px #000;
+#menu:target {
+	box-shadow: inset -3px 0 5px #000;
   	width: 60%;
   	z-index: 999;
 }
 
-#nav:target + .wrap {
+#menu:target + .container {
 	right: -60%;
 	position: fixed;
 	overflow: hidden;
 }
-#nav:target + .wrap #nav-open {
+#menu:target + .container #menu-control a:first-child {
 	display: none;
 }
-#nav:target + .wrap #nav-close {
+#menu:target + .container #menu-control a:last-child {
 	display: block;
 }
 
+.skiplink {
+	left: -9999px;
+	position: absolute;
+}
 
 /*_________________  Header
 ________________________________________*/
@@ -70,7 +84,6 @@ ________________________________________*/
 header {
   	background: #001D5F;
   	height: 50px;
-	overflow: hidden;
   	transition: all 0.3s ease;
   	-webkit-transition: all 0.3s ease;
   	-moz-transition: all 0.3s ease;
@@ -78,7 +91,7 @@ header {
 header h1 {
 	background: url(http://dummyimage.com/105x21/fff/0011ff.png&text=not-retina.png) no-repeat;
 	height: 21px;
-	margin: 15px auto;
+	margin: 0 auto;
 	text-indent: -99999px;
 	width: 105px;
 }
@@ -87,21 +100,22 @@ header h1 {
 /*_________________  Header Buttons
 ________________________________________*/
 
-.wrap #phone-call {
+header #phone-call {
 	background: #72ab13;
 	background-image: -moz-linear-gradient( 90deg , rgba(114, 171, 19, 1) 0%, rgba(114, 171, 19, 0.6) 100%, rgba(255, 255, 255, 0.5) 100%);
 	background-image: -webkit-linear-gradient( 90deg , rgba(114, 171, 19, 1) 0%, rgba(114, 171, 19, 0.6) 100%, rgba(255, 255, 255, 0.5) 100%);
 	background-image: -o-linear-gradient( 90deg , rgba(114, 171, 19, 1) 0%, rgba(114, 171, 19, 0.6) 100%, rgba(255, 255, 255, 0.5) 100%);
 	background-image: -ms-linear-gradient( 90deg , rgba(114, 171, 19, 1) 0%, rgba(114, 171, 19, 0.6) 100%, rgba(255, 255, 255, 0.5) 100%); 
+	border: 1px solid rgba(255,255,255,0.2);
 	border-radius: 3px;
-	box-shadow: inset 0 0 2px (255,255,255,1), 0 0 2px rgba(0,0,0,0.5);
-	-webkit-box-shadow: inset 0 0 2px (255,255,255,0.2), 0 0 2px rgba(0,0,0,0.5);
+	box-shadow: 0 0 4px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.5);
 	float: right;
 	padding: 4px 15px 2px 15px;
 	margin: 10px 15px;
 }
 
-.wrap #nav-open {
+#menu-control a {
 	background: #001D5F;
 	color: #fff;
 	float: left;
@@ -109,44 +123,28 @@ ________________________________________*/
 	font-weight: bold;
 	margin: 1px 0 -1px 5px;
 	padding: 4px 6px 6px;
-	position: fixed;
-	text-decoration: none;
 	z-index: 99999;
 	transform: rotate(90deg);
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
 	-o-transform: rotate(90deg);
 }
-.wrap #nav-close  {
-	background: #001D5F;
-	color: #fff;
+#menu-control a:last-child  {
 	display: none;
-	float: left;
-	font-size: 2.25em;
-	font-weight: bold;
-	margin: 1px 0 -1px 5px;
-	padding: 4px 6px 6px;
-	position: fixed;
-	text-decoration: none;
-	z-index: 99999;
-	transform: rotate(90deg);
-	-webkit-transform: rotate(90deg);
-	-moz-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
 }
 
 
-/*_________________  Wrappers
+/*_________________  Containers
 ________________________________________*/
 
-.wrap {
+.container {
 	background-image: -moz-linear-gradient( 90deg , rgba(44, 50, 65, 1) 0%, rgba(44, 50, 65, 0.9) 100%);
 	background-image: -webkit-linear-gradient( 90deg , rgba(44, 50, 65, 1) 0%, rgba(44, 50, 65, 0.9) 100%);
 	background-image: -ms-linear-gradient( 90deg , rgba(44, 50, 65, 1) 0%, rgba(44, 50, 65, 0.9) 100%);
 	float: right;
 	height: 100%;
 	min-height: auto;
-	min-height: 1320px;
+	min-height: 1400px;
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
@@ -322,10 +320,10 @@ ________________________________________*/
 .accordion {
 	position: relative;
     margin: 40px auto;
-    width: 90%;
+    width: 100%;
 }
  
-.accordion a {
+#open-accordion1, #open-accordion2, #open-accordion3, #close-accordion1, #close-accordion2, #close-accordion3 {
 	background-image: -moz-linear-gradient( 90deg , rgba(240, 240, 240, 1) 0%, rgba(240, 240, 240, 1) 50%, #fff 75%);
 	background-image: -webkit-linear-gradient( 90deg , rgba(240, 240, 240, 1) 0%, rgba(240, 240, 240, 1) 50%, #fff 75%);
 	background-image: -o-linear-gradient( 90deg , rgba(240, 240, 240, 1) 0%, rgba(240, 240, 240, 1) 50%, #fff 75%);
@@ -336,7 +334,12 @@ ________________________________________*/
     float: left;
     display: block;
     margin: 0 auto;
+    position: relative;
     width: 100%;
+}
+
+#close-accordion1, #close-accordion2, #close-accordion3 {
+    display: none;
 }
 
 .accordion a h1 {
@@ -347,8 +350,17 @@ ________________________________________*/
 	margin-left: 10px;
 	text-shadow: none;
 }
- 
-.accordion a:hover { cursor: pointer; }
+
+#open-accordion1:after, #open-accordion2:after, #open-accordion3:after, #close-accordion1:after, #close-accordion2:after, #close-accordion3:after {
+	content: "";
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #ccc;
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	z-index: 999;
+}
 
 .target-fix {
 	display: block;
@@ -358,8 +370,20 @@ ________________________________________*/
 }
 
 .accordion span:nth-of-type(2):target ~ .accordion-content:nth-of-type(1) { display: block; height: auto; padding-bottom: 25px; padding-top: 10px; }
+.accordion span:nth-of-type(2):target ~ #close-accordion1 { display: block; }
+.accordion span:nth-of-type(2):target ~ #open-accordion1 { display: none; }
+.accordion span:nth-of-type(2):target ~ #close-accordion1:after { border-top: 10px solid #000; }
+
 .accordion span:nth-of-type(3):target ~ .accordion-content:nth-of-type(2) { display: block; height: auto; padding-bottom: 25px; padding-top: 10px; }
+.accordion span:nth-of-type(3):target ~ #close-accordion2 { display: block; }
+.accordion span:nth-of-type(3):target ~ #open-accordion2 { display: none; }
+.accordion span:nth-of-type(3):target ~ #close-accordion2:after { border-top: 10px solid #000; }
+
 .accordion span:nth-of-type(4):target ~ .accordion-content:nth-of-type(3) { display: block; height: auto; padding-bottom: 25px; padding-top: 10px; }
+.accordion span:nth-of-type(4):target ~ #close-accordion3 { display: block; }
+.accordion span:nth-of-type(4):target ~ #open-accordion3 { display: none; }
+.accordion span:nth-of-type(4):target ~ #close-accordion3:after { border-top: 10px solid #000; }
+
 
 .accordion-content {
 	border: 1px solid #ccc;
@@ -374,31 +398,13 @@ ________________________________________*/
   	-moz-transition: all 0.1s ease;
 }
 
-#close-accordian1, #close-accordian2, #close-accordian3 {
-	background-image: none;
-	border-bottom: 15px solid #001D5F;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	border-top: none;
-    box-shadow: none;
-    line-height: 0;
-    height: 0;
-    float: right;
-    margin: 0 auto;
-    position: absolute;
-    text-decoration: none;
-    left: 5px;
-    bottom: 5px;
-    width: 0;
-    z-index: 99999;
-}
 
 /*_________________  Tabs
 ________________________________________*/
 
 .tabs {
 	position: relative;
-    margin: 20px auto;
+    margin: 40px auto;
     width: 100%;
 }
  
@@ -444,7 +450,9 @@ ________________________________________*/
 
 .tabs .content {
     position: relative;
-    height: 250px;
+    min-height: 250px;
+	height: auto !important;
+	height: 250px;
     z-index: 5;
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }

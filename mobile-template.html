@@ -8,6 +8,7 @@
     <title>Mobile HTML Template</title>
     
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
 
     <!--removes the safari url bar as soon as page is loaded-->
     <script type="text/javascript">
@@ -24,32 +25,38 @@
 
 <body>
 
-<nav id="nav" class="navigation">    
-    <a href="#call-now">Call Now!</a>
-    <a href="#form-jump">Form</a>
-    <a href="#">Nav Item</a>
-    <a href="#">- - - - -</a>
-    <a href="#">Naviagtion</a>
-    <a href="#">is</a>
-    <a href="#">scrollable</a>
-    <a href="#">once</a>
-    <a href="#">enough</a>
-    <a href="#">navigation</a>
-    <a href="#">items</a>
-    <a href="#">are</a>
-    <a href="#">used.</a>
-    <a href="#">Extra</a>
-    <a href="#">padding</a>
-    <a href="#">is given</a>
-    <a href="#">to last</a>
-    <a href="#">child</a>
+<nav id="menu" role="menu">
+    <!-- ADA Skip Navigation Link -->
+    <div class="skiplink"><a href="#menu-control">Skip Navigation</a></div>
+    <ul>
+        <li><a href="#call-now">Call Us!</a></li>
+        <li><a href="#form">Form</a></li>
+        <li><a href="#">Nav Item</a></li>
+        <li><a href="#">- - - - -</a></li>
+        <li><a href="#">Naviagtion</a></li>
+        <li><a href="#">is</a></li>
+        <li><a href="#">scrollable</a></li>
+        <li><a href="#">once</a></li>
+        <li><a href="#">enough</a></li>
+        <li><a href="#">navigation</a></li>
+        <li><a href="#">items</a></li>
+        <li><a href="#">are</a></li>
+        <li><a href="#">used.</a></li>
+        <li><a href="#">Extra</a></li>
+        <li><a href="#">padding</a></li>
+        <li><a href="#">is given</a></li>
+        <li><a href="#">to last</a></li>
+        <li><a href="#">child</a></li>
+    </ul>
 </nav>
 
-<div class="wrap">
+<div class="container">
 
     <header>
-        <a id="nav-open" href="#nav">|||</a>
-        <a id="nav-close" href="#">|||</a> 
+        <div id="menu-control">
+            <a href="#menu" title="open menu">|||</a>
+            <a href="#" title="close menu">|||</a> 
+        </div>
         
         <!-- important to set height and width, and save a @2x retina version -->
         <a id="phone-call" href="#"><img src="images/phone.png" height="19" width="17" /></a>
@@ -102,7 +109,9 @@
                 <span class="target-fix" id="accordion2"></span> 
                 <span class="target-fix" id="accordion3"></span> 
                 <!-- First Accoridon Option -->
-                <a href="#accordion1"><h1>First Accoridon Option</h1></a>
+                <a href="#accordion1" id="open-accordion1" title="accordion option 1"><h1>First Accordion Option</h1></a>
+                <!-- Shows When Open, so Accoridan will Close -->
+                <a href="#accordion" id="close-accordion1" title="close accordion 1"><h1>First Accordion Option</h1></a>
                     <div class="accordion-content">
                         <p>
                             <ul>
@@ -111,29 +120,27 @@
                                 <li>Dolor sit amet</li>    
                             </ul>
                         </p>
-                        
-                        <a href="#accordion" id="close-accordian1"></a>
                     </div>
 
                 <!-- Second Accoridon Option -->
-                <a href="#accordion2"><h1>Second Accordion Option</h1></a>
+                <a href="#accordion2" id="open-accordion2" title="accordion option 2"><h1>Second Accordion Option</h1></a>
+                <!-- Shows When Open, so Accoridan will Close -->
+                <a href="#accordion" id="close-accordion2" title="close accordion 2"><h1>Second Accordion Option</h1></a>
                     <div class="accordion-content">
                         <p>Paragraph in an Accoridion.
                             <br />
                             Et ham qui, filet mignon aliqua adipisicing anim short loin esse pork chop proident occaecat pork loin ea. Mollit boudin ut culpa nulla officia aute beef ribs enim in bacon. 
-                        </p>
-                            
-                        <a href="#accordion" id="close-accordian2"></a>
+                        </p>       
                     </div>
                 
                 <!-- Third Accoridon Option -->
-                <a href="#accordion3"><h1>Third Accordion Option</h1></a>
+                <a href="#accordion3" id="open-accordion3" title="accordion option 2"><h1>Third Accordion Option</h1></a>
+                <!-- Shows When Open, so Accoridan will Close -->
+                <a href="#accordion" id="close-accordion3" title="close accordion 3"><h1>Third Accordion Option</h1></a>
                     <div class="accordion-content">
                         <p>Et ham qui, filet mignon aliqua adipisicing anim short loin esse pork chop proident occaecat pork loin ea. Mollit boudin ut culpa nulla officia aute beef ribs enim in bacon. </p>
-
-                        <a href="#accordion" id="close-accordian3"></a>
                     </div>
-                <!-- More Accoridon options could be added. Copy/paste a option appove. then change the number (ex., #accordian4) and add new CSS for option. -->
+                <!-- More Accoridon options could be added. Copy/paste a option appove. then change the number (ex., #accordion4) and add new CSS for option. -->
             </div>
 
             <!-- Tabs Example -->
@@ -171,7 +178,7 @@
                             <h2>Content Two</h2>
                                 Et ham qui, filet mignon aliqua adipisicing anim short loin esse pork chop proident occaecat pork loin ea. Mollit boudin ut culpa nulla officia aute beef ribs enim in bacon.
                                 <br /><br />
-                                Et ham qui, filet mignon aliqua adipisicing anim short loin esse pork chop proident occaecat pork loin ea. Mollit boudin ut culpa nulla officia aute beef ribs enim in bacon.
+                                Et ham qui, filet mignon aliqua adipisicing anim short loin esse pork chop proident occaecat pork loin ea.
                         </p>
                     </div>
                     
